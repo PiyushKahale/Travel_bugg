@@ -1,0 +1,124 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-weight: 500 !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2.5rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.f-info {
+    text-align: center;
+    height: 6rem;
+    display: flex;
+    background-color: #fe424d;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.f-info-soc, .f-info-links, .f-info-name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-info-soc {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+.f-info-soc i{
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+    margin-left: 0.2rem;
+    margin-bottom: 0.5rem;
+
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+/* Card */
+.listing-cards {
+    border: none !important;
+    margin-bottom: 1.5rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.listing-link {
+    text-decoration: none !important;
+}
+
+.card-img-overlay {
+    opacity: 0 !important;
+}
+.card-img-overlay:hover {
+    opacity: 0.2 !important;
+    background-color: white;
+}
+
+/* New Page  */
+.add-btn, .sub-btn, .del-Btn, .edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+/* Show Page */
+.show-img {
+    height: 35vh;
+}
+
+.show-btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sbmt-btn {
+    background-color: #fe424d !important;
+}
+
+/* Reviews card - show page */
+
+
+/* Navbar Nav SignUp/Login */
+
+/* Map  */
+#map { 
+    height: 400px;
+    width: 90vh;
+}

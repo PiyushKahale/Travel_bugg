@@ -1,0 +1,141 @@
+- { Create Server }
+ - initialize Server and Set all the required things
+ - install Mongoose, express, ejs.
+ - Set View Engine , views
+ - URL-encoded for Data Parsing
+
+- [ Create Data Base ]
+ - create listing Schema and its property
+ - initialize DataBase 
+ - Initialize data in Database using Mongo Operations
+
+- [ Create views using EJS package ]
+ - show listings
+ - create pages to create, show, edit, allListings using EJS, using form and requests
+ - add styling and js logic
+ - create boilerplate, add it on each page
+ 
+- [ Client & Server side Validations & Handling Errors ]
+ - client side validation using css logic and bootstrap
+ - server side validation using JOI package
+ - create "middleware" for handling error
+ - create custom Express Error for different Errors and messages
+
+- [ Create Review System ]
+ - create and define reviews schema
+ - create schema -> create instance -> define schema struc -> create model
+ - add review section on Show page, do CRUD operations using form
+ - validate the Review Schema from Client and Server side both
+ - to show reviews , use "populate" method to get data with the list and arrays
+ - add delete functionality , to delete individual review
+ - use "PULL" method to pull and remove the review from listing array too.
+ - also add functionality that deletes all reviews on deleting listing too
+
+- [ Routing - Restructure Routes ]
+ - Require - express package "Router".
+ - Create Routes Folder -> for listing and review Routes.
+ - Put all paths of listing in Listing route file, and review paths in review route file.
+ - Use common path in "app.js" ,as app.use("-----", -----);
+ - Copy & Paste the required things in Router files functions and all.
+ -- Use "mergerParams: true", to pass the params to Route Files too.
+
+- [ Cookies - Web Cookies ]
+ - Web Server Sends data to browser that is Cookies(small chunks).
+ - Express has Cookie property, install and require "cookie-parser" package.
+ - "req" had a cookies, that only need to parse(read).
+ // from "req" we doesnt parse the cookies directly. // app.use(cookieparser())
+ - using "signedcookie" we can check any tampering is happening or not.
+
+
+- [ Sessions Management ] - "for Authentication" and "Authorization"
+ - Sessions for user to register and login/logout.
+ - use "express-session" package.
+ - set SessionOptions = secret, resave , saveUninitial, cookie, etc.
+ - "connect-flash" package to display some message to user and disappears after within sec.
+ - require and "app.use(flash())".
+ - If !listing and !review (empty) then req.flash(error/success) and redirect.
+
+
+- [ Authentication & Authorization ]
+ - install passport, passport-local, passport-local-mongoose.
+ - "passport-local-mongoose" add a username, hash and salt field to store
+ - create User Model with p-l-m, add plugin(p-l-m) in Schema
+ - require passport and passport-local,
+ - use : passport.initialize() and passport.session()
+ - Serialize and Deserialize User
+ - Use Static-Method to Authenticate through Local Strategy
+ - Create "/Signup" and "/login" route
+ - Also create pages to do Signup and login
+ - use ".register" and ".authenticate" methods to signup/login.
+
+- [ Connecting Login Route ]
+ - <!-- <%- include("../includes/flash.ejs") %> --> in Boilerplate.
+ - use ".isAuthenticated" to check User is registerd or not.
+ - create WiddleWare.js and then export logic as function
+ - Add logout in user.js -> router
+ - add Styling for signup/login/logout.
+ - use .login to directly "login after signup".
+ - add middleware to PostLogin - saveRedirectUrl in locals, exports, use in Login
+ - add Owner property in listing and asign user to all listings by reinit DataBase.
+ - Authentication and Authorization for reviews.(who can delete, update, etc).
+
+- [ MVC framework - Part 3 ]
+ - shift all routes from route's listings to controller's listings
+ - shift all reviews and users route's also to controller's section
+ - implement 'router.route" to keep equal path for those who have same paths
+ - use "Starability Stars" to build the stars rating functionality.
+ - include css link and make changes in boilerplate and show ejs. 
+ - also change the name has rating -> review[rating].
+
+- [ Photo Upload Functionality ] 
+ - to upload files we add "enctype" in form : 'multipart/form-data', 
+ (do changes in new.ejs).
+ - we use "Multer" package to handle the multipart/form-data.
+ - install and require 'multer' and use upload (dest: '/') to store file.
+ - use upload.single() method to store single file in local storage (temprrry).
+ - Signup for Cloudinary cloud to store the file on cloud.
+ - create ".env" file to store the credential of API's.
+ - use "dotenv" file to integrate env file with backend.
+ - require and config the "dotenv" file.(don't add any space in credential)
+ - add Name, API key, and SecretKEy for CLoud setup in ENV.
+ - install and require "cloudinary" and "multer-storage-cloudinary" packages.
+ - create cloudConfig.js file then do further changes.
+ - Config cloudinary with "process.env.---" all the env's.
+ - export and import that storage in routes->listings.
+
+    ---+--- if(process.env.NODE_ENV != "production") { ---+---
+    ---+--- require("dotenv").config(); ---+---
+    ---+--- } ---+--- use this to access in overall backend.
+ - store the filename and url in varible and store that in listingschema
+ - do some changes in controller->listing to store and send in response.
+
+
+- [ Edit Listing Image Property ]
+ - do changes in Edit form to get same functionality as upload on cloud
+ - pass the upload.single() middleware to Edit route
+ - also get the URL and FIlename to save in OG listing prop.
+ - then save the listing again in DB with "url" and "filename".
+
+- [ Map functionality ]
+ - "MapBox" - signup and get Access key and store in .env file
+ - get the links of Css and js from examples and add it in boilerplate
+ - copy the code of diiv and script - to show.ejs get there KeyToken
+ - also change the CSS for the Map
+ - MapBox use Opposite functionality - (longitude and latitude)
+ - add script and css for Map in show.ejs (using API key)
+ - Geocoding for Co-ordinates (long. and lat.)
+ - go to documentation and install the library from Git repo.
+ - use the documentation to use Geocoding, use geoCoding Client.
+ - use await , instead of ".then"
+ - take out geometry from the features[0], store it in DB, also change listing model.
+ - also connect with frontend to show coordinates according to location
+
+- [ Improve UI ]
+ - do all changes on navbar and doo it good
+ - add 18% GST functionality on every listing
+
+- [ Mongo Atlas ] 
+ -  mongodb+srv://travel_bug:Piyush200$@cluster0.zhozfpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ - connect with MOngoAtlas with link and pass link to connections
+ - do changes in package.json - <engine: node: "version">
+ - add git Ignore and hide ".env" and "node_modules"
