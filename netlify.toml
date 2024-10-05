@@ -1,0 +1,4 @@
+[build]
+  base = "./Travel_bug"
+  command = "npm run build"
+  publish = "public"
