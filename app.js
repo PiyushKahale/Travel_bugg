@@ -146,6 +146,7 @@ app.use("/", userRouter);
 
 // ---- Custom Express Error
 app.all("*", (req, res, next) => {
+    res.render("listings/index.ejs");
     next(new ExpressError(404, "Page Not Found!"));
 });
 
