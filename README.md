@@ -1,6 +1,6 @@
 Run 
 npm install
 
-Run By 
+Start By 
 node/ nodemon app.js
 
