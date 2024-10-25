@@ -1,2 +1,6 @@
+Run 
+npm install
+
 Run By 
-Node/ Nodemon app.js
+node/ nodemon app.js
+
